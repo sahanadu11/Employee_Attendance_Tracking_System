@@ -1,0 +1,27 @@
+name: Auto Create Branch on Push
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  create-branch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Create and push new branch
+        run: |
+          TIMESTAMP=$(date +'%Y%m%d-%H%M%S')
+          BRANCH_NAME="dev-${TIMESTAMP}"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH_NAME"
+          git push -u origin "$BRANCH_NAME"
+          echo "Created and pushed branch: $BRANCH_NAME"
