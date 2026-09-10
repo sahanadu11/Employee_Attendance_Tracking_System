@@ -1,0 +1,28 @@
+{
+  "name": "employee-attendance-system",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev:server": "cd backend && npm run dev",
+    "dev:client": "cd frontend && npm start",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "build:server": "cd backend && npm run build",
+    "build:client": "cd frontend && npm run build",
+    "build": "npm run build:server && npm run build:client",
+    "typecheck:server": "cd backend && npx tsc --noEmit",
+    "typecheck:client": "cd frontend && npx tsc --noEmit",
+    "typecheck": "npm run typecheck:server && npm run typecheck:client",
+    "seed": "cd backend && npm run seed",
+    "test": "cd backend && npm test",
+    "lint": "cd backend && npm run lint",
+    "docker:build": "docker build -t attendance-system .",
+    "docker:run": "docker run -p 5000:5000 -p 3000:3000 attendance-system"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

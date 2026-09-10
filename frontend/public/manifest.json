@@ -1,0 +1,42 @@
+{
+  "name": "AERO-OPS Attendance Telemetry",
+  "short_name": "AERO-OPS",
+  "description": "Employee attendance, GPS geofencing and shift telemetry command center",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#060a13",
+  "theme_color": "#060a13",
+  "icons": [
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "My Attendance",
+      "url": "/employee/attendance",
+      "description": "Submit attendance events"
+    },
+    {
+      "name": "Live Monitor",
+      "url": "/monitor",
+      "description": "Realtime attendance wall"
+    }
+  ]
+}

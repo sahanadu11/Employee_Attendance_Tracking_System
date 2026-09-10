@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "commonjs",
+    "lib": ["ES2022"],
+    "outDir": "./dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "strictNullChecks": true,
+    "moduleResolution": "node",
+    "types": ["node", "jest", "express"]
+  },
+  "include": ["src/**/*", "models/**/*", "controllers/**/*", "routes/**/*", "services/**/*", "middleware/**/*", "config/**/*", "utils/**/*", "websocket/**/*", "seed/**/*", "validators/**/*", "shared/**/*", "jobs/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
